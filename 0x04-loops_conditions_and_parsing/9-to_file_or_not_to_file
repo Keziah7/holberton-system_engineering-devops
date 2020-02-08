@@ -2,18 +2,18 @@
 # Bash script that gives you information about the holbertonschool file
 hfile="holbertonschool"
 if [ -e "$hfile" ]; then
-    echo "holbertonschool file exists"
+    echo "$hfile file exists"
     if [ -s "$hfile" ]; then
-	echo "holbertonschool file is not empty"
+	echo "$hfile file is not empty"
 	if [ -f "$hfile" ]; then
-	    echo "holbertonschool file is a regular file"
+	    echo "$hfile file is a regular file"
 	fi
     else
-	echo "holbertonschool file is empty"
+	echo "$hfile file is empty"
 	if [ -f "$hfile" ]; then
-	    echo "holbertonschool file is a regular file"
+	    echo "$hfile file is a regular file"
 	fi
     fi
 else
-	echo "holbertonschool file does not exist"
+	echo "$hfile file does not exist"
 fi

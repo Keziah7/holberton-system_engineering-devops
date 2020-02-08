@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Bash script that gives you information about the holbertonschool file
 hfile="holbertonschool"
-if [ -e "$hfile" ]
+if [ -e "$hfile" ] || [ -d "$hfile" ]
 then
     echo "$hfile file exists"
     if [ -s "$hfile" ]

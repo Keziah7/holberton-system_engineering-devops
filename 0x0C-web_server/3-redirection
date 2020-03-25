@@ -6,8 +6,9 @@ sudo apt-get install nginx -y
 # sudo ufw enable -y
 sudo ufw allow 'OpenSSH'
 sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
 # String to include
 new_string="server_name _;\n\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
 # Replace a line with multiple lines with sed
 sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
-sudo service nginx restart
+sudo service nginx start

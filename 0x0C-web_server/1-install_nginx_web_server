@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx web server and basic setup
 sudo apt-get update -y
-sudo apt-get -y install nginx
+sudo apt-get install nginx -y
 # Adjust the firewall
 # sudo ufw enable -y
 sudo ufw allow 'OpenSSH'

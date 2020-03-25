@@ -3,7 +3,7 @@
 sudo apt-get update -y
 sudo apt-get -y install nginx
 # Adjust the firewall
-sudo ufw enable -y
+# sudo ufw enable -y
 sudo ufw allow 'OpenSSH'
 sudo ufw allow 'Nginx HTTP'
 # Take backup of the original index

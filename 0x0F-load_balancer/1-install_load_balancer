@@ -3,7 +3,7 @@
 sudo apt-get update -y
 sudo apt-get install haproxy=1.6.\*
 frontend="\nfrontend node-http\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n"
-backend="\nbackend web-backend\n\tbalance roundrobin\n\toption forwardfor\n\thttp-request set-header X-Forwarded-Port %[dst_port]\n\thttp-request add-header X-Forwarded-Proto https if { ssl_fc }\n\toption httpchk HEAD / HTTP/1.1\r\nHost:localhost\n\tserver web1 35.243.214.144:8080 check\n\tserver web2 34.233.133.27:8080 check\n"
+backend="\nbackend web-backend\n\tbalance roundrobin\n\toption forwardfor\n\thttp-request set-header X-Forwarded-Port %[dst_port]\n\thttp-request add-header X-Forwarded-Proto https if { ssl_fc }\n\toption httpchk HEAD / HTTP/1.1\r\nHost:localhost\n\tserver 1216-web-01 35.243.214.144:8080 check\n\tserver 1216-web-02 34.233.133.27:8080 check\n"
 sudo sed -i "39a\ $frontend" /etc/haproxy/haproxy.cfg
 7sudo sed -i "39a\ $backend" /etc/haproxy/haproxy.cfg
 sudo service haproxy restart

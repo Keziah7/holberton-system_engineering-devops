@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Block all incoming traffic but exclude these ports
+# SSH, HTTPS SSL, HTTP
+# By default, deny incoming and allow outgoing
+sudo apt-get update -y
+sudp apt-get install ufw -y
+# sudo ufw default deny incoming
+# sudo ufw default allow outgoing
+sudo ufw allow 'OpenSSH'
+sudo ufw allow 'Nginx HTTP'
+sudo ufw allow 'Nginx HTTPS'
+sudo ufw reload
+sudo ufw enable

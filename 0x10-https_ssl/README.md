@@ -5,7 +5,7 @@
 * What is the purpose encrypting traffic
 * What SSL termination means
 
-## Quesions
+## Questions
 * What is HTTPS?
 
 1. A secure version of HTTP

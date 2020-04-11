@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Using what you did for task #1, make your fix short and sweet.
-chmod 700 /etc/nginx/nginx.conf
+chmod 204 /etc/nginx/nginx.conf
 sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
-chown nginx:nginx /etc/nginx/nginx.conf
 pkill apache2
 sudo -u nginx service nginx restart

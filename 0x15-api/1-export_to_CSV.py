@@ -17,14 +17,9 @@ if __name__ == "__main__":
 
     # Getting the NUMBER_OF_DONE_TASKS and total tasks
     total_tasks = req_todo.json()
-    done_tasks = []
-    for task in total_tasks:
-        if (task.get('completed') is True):
-            done_tasks.append(task)
-
     # Employee name from users
     user_data = req_user.json()
-    emp_name = user_data[0].get('name')
+    emp_name = user_data[0].get('username')
 
     with open('{}.csv'.format(empId), mode='w') as employee_file:
         employee_writer = csv.writer(employee_file, delimiter=',',

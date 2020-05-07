@@ -6,6 +6,7 @@ import requests
 def number_of_subscribers(subreddit):
     """ function that queries the Reddit API and returns the number
     of subscribers """
+    # me.json is a modhash token to prevent CSRF
     url_subs = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     h = {'User-Agent': 'My User Agent'}
     req = requests.get(url_subs, headers=h, allow_redirects=False)

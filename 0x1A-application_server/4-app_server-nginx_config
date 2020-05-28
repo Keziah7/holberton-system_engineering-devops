@@ -51,13 +51,6 @@ server {
         }
 
 
-        location / {
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
-                # add_header X-Served-By gc-1216-web-01-1584940281;
-        }
-
         location /hbnb_static/ {
                 alias /data/web_static/current/;
         }
@@ -67,15 +60,25 @@ server {
                 proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
         }
 
+        server_name 127.0.0.1 35.243.214.144;
+
         location /airbnb-dynamic/number_odd_or_even/ {
                 include proxy_params;
                 proxy_pass http://0.0.0.0:5001/number_odd_or_even/;
         }
 
         location /api/ {
-        #       include proxy_params;
+                include proxy_params;
                 proxy_pass http://0.0.0.0:5002;
         }
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+                # add_header X-Served-By gc-1216-web-01-1584940281;
+        }
+
 
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
